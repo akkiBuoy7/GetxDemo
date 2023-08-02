@@ -1,49 +1,40 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({super.key, required this.title});
-
-  final String title;
+  const SecondPage({super.key,});
 
   @override
   State<SecondPage> createState() => _SecondPageState();
 }
 
 class _SecondPageState extends State<SecondPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Second Page"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             Text(
-              '$_counter',
+              Get.arguments,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        onPressed: (){
+          Get.back(result: "result from second page");
+        },
+        child: const Text("Back"),
       ),
     );
   }
