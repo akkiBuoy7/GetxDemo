@@ -30,6 +30,13 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
                       '${controllerIns.counter.value?.counter}',
                       style: Theme.of(context).textTheme.headlineMedium,
                     )),
+            GetBuilder<MyBuilderController>(
+              id: "123",
+                init: MyBuilderController(),
+                builder: (controllerIns) => Text(
+                  '${controllerIns.counter.value?.counter}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                )),
           ],
         ),
       ),

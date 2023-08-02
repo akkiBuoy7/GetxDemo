@@ -10,6 +10,6 @@ class MyBuilderController extends GetxController {
 
   incrementCounter() {
     counter.value?.counter = (counter.value?.counter)! + 1;
-    update();
+    update(['123']);
   }
 }

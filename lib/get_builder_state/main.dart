@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:getx_demo/state_management_arch/view/getx_counter_page.dart';
-import 'package:getx_demo/state_management_arch/view/obx_counter_page.dart';
+import 'package:getx_demo/get_builder_state/view/get_builder_counter_page.dart';
 
 
 void main() {
