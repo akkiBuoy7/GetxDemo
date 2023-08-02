@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controller/counter_controller.dart';
+import '../controller/counter_controller_builder.dart';
 
 class MyGetXCounter extends StatefulWidget {
   const MyGetXCounter({super.key, required this.title});
@@ -24,8 +24,8 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            GetX<MyController>(
-                init: MyController(),
+            GetBuilder<MyBuilderController>(
+                init: MyBuilderController(),
                 builder: (controllerIns) => Text(
                       '${controllerIns.counter.value?.counter}',
                       style: Theme.of(context).textTheme.headlineMedium,
@@ -35,7 +35,7 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          var myController = Get.find<MyController>();
+          var myController = Get.find<MyBuilderController>();
           myController.incrementCounter();
           print(myController.counter.value?.counter);
         },
