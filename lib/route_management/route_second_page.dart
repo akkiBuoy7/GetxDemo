@@ -24,7 +24,12 @@ class _SecondPageState extends State<SecondPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              Get.arguments,
+              Get.parameters["data1"]??"",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            SizedBox.square(dimension: 20,),
+            Text(
+              Get.parameters["data2"]??"",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],

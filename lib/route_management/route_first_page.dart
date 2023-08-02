@@ -17,6 +17,8 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   String res = "";
+  String data1 = "Data 1 from first page";
+  String data2 = "Data 2 from second page";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,22 +37,28 @@ class _FirstPageState extends State<FirstPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async{
+        // onPressed: () async{
+        //
+        //    res = await Get.to(()=>SecondPage(),
+        //       arguments: "Data from first page",
+        //       transition: Transition.zoom,
+        //       duration: Duration(seconds: 2));
+        //
+        //    print(res);
+        //
+        //    setState(() {
+        //    });
+        //
+        //   // Get.to(()=>SecondPage(),
+        //   // arguments: "Data from first page",
+        //   // transition: Transition.zoom,
+        //   // duration: Duration(seconds: 2));
+        // },
+        onPressed: () async {
+          res = await Get.toNamed("/second?data1=${data1}&data2=${data2}");
 
-           res = await Get.to(()=>SecondPage(),
-              arguments: "Data from first page",
-              transition: Transition.zoom,
-              duration: Duration(seconds: 2));
-
-           print(res);
-
-           setState(() {
-           });
-
-          // Get.to(()=>SecondPage(),
-          // arguments: "Data from first page",
-          // transition: Transition.zoom,
-          // duration: Duration(seconds: 2));
+          setState(() {
+          });
         },
         child: const Text("Next"),
       ),
