@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:getx_demo/counter/counter_page.dart';
+
+import 'route_first_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyCounter(title: 'Flutter Demo Home Page'),
+      home: const FirstPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-

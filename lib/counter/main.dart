@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:getx_demo/counter/counter_page.dart';
+
+import 'counter_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
