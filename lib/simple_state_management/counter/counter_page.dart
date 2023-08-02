@@ -1,6 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyCounter extends StatefulWidget {
   const MyCounter({super.key, required this.title});
@@ -12,11 +12,14 @@ class MyCounter extends StatefulWidget {
 }
 
 class _MyCounterState extends State<MyCounter> {
-  int _counter = 0;
+  var _counter = 0.obs; // make the variable observable
+  var count = Rx<int>(0); // other ways to declare a reactive variable
+  var count1 = RxInt(0);
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      //_counter++;
+      count1++;
     });
   }
 
@@ -33,9 +36,11 @@ class _MyCounterState extends State<MyCounter> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Obx( // widget to listen to observable variable
+              () => Text(
+                '$count1',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
           ],
         ),
