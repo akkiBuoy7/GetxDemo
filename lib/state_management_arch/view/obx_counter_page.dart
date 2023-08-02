@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:getx_demo/state_management_arch/controller/counter_controller.dart';
 import 'package:getx_demo/state_management_arch/model/counter_model.dart';
 
-class MyGetXCounter extends StatefulWidget {
-  const MyGetXCounter({super.key, required this.title});
+class MyObxCounter extends StatefulWidget {
+  const MyObxCounter({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyGetXCounter> createState() => _MyGetXCounterState();
+  State<MyObxCounter> createState() => _MyObxCounterState();
 }
 
-class _MyGetXCounterState extends State<MyGetXCounter> {
+class _MyObxCounterState extends State<MyObxCounter> {
   var myController = Get.put(MyController());
 
   @override
