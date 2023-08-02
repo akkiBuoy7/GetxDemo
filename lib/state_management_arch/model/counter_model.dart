@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class Counter{
-  int? counter=0;
+  var counter=0.obs;
 }
