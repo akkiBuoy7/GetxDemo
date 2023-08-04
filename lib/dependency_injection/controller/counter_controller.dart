@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:getx_demo/state_management_arch/model/counter_model.dart';
+import 'package:getx_demo/dependency_injection/model/counter_model.dart';
 
 class MyController extends GetxController {
-  final counter = Counter().obs;
+  final counter = Rxn<Counter>();
 
 
   MyController(){
@@ -10,7 +10,7 @@ class MyController extends GetxController {
   }
 
   incrementCounter() {
-    counter.value.counter = (counter.value.counter) + 1;
+    counter.value?.counter = (counter.value?.counter)! + 1;
     counter.refresh();
   }
 }

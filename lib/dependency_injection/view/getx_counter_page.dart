@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/dependency_injection/controller/counter_controller.dart';
 
-import '../controller/counter_controller.dart';
+
 
 class MyGetXCounter extends StatefulWidget {
   const MyGetXCounter({super.key, required this.title});
@@ -27,7 +28,7 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
             GetX<MyController>(
                 init: MyController(),
                 builder: (controllerIns) => Text(
-                      '${controllerIns.counter.value.counter}',
+                      '${controllerIns.counter.value?.counter}',
                       style: Theme.of(context).textTheme.headlineMedium,
                     )),
           ],
@@ -37,7 +38,7 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
         onPressed: () {
           var myController = Get.find<MyController>();
           myController.incrementCounter();
-          print(myController.counter.value.counter);
+          print(myController.counter.value?.counter);
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
