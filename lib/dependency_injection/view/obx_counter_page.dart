@@ -15,6 +15,10 @@ class MyObxCounter extends StatefulWidget {
 class _MyObxCounterState extends State<MyObxCounter> {
   var myController = Get.put(MyController());
 
+  var myControllerLazy = Get.lazyPut(() => MyController());
+
+  var myControllerCreate = Get.create(() => MyController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
