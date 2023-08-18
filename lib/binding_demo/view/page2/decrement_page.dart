@@ -4,14 +4,9 @@ import 'package:getx_demo/binding_demo/controller/decrement_controller.dart';
 
 import '../../controller/increment_controller.dart';
 
-class DecrementPage extends StatefulWidget {
+class DecrementPage extends GetView<DecrementController> {
   const DecrementPage({Key? key}) : super(key: key);
 
-  @override
-  State<DecrementPage> createState() => _DecrementPageState();
-}
-
-class _DecrementPageState extends State<DecrementPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
