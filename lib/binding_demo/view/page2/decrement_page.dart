@@ -35,7 +35,8 @@ class DecrementPage extends GetView<DecrementController> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          var controller = Get.find<DecrementController>();
+          // No need for Find as we are using GetView
+          //var controller = Get.find<DecrementController>();
           controller.decrement();
         },
         child: Icon(Icons.minimize),
