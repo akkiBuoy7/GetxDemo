@@ -27,7 +27,7 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
             GetX<MyController>(
                 init: MyController(),
                 builder: (controllerIns) => Text(
-                      '${controllerIns.counter.value.counter}',
+                      '${controllerIns.counterObj.value.counter}',
                       style: Theme.of(context).textTheme.headlineMedium,
                     )),
           ],
@@ -37,7 +37,7 @@ class _MyGetXCounterState extends State<MyGetXCounter> {
         onPressed: () {
           var myController = Get.find<MyController>();
           myController.incrementCounter();
-          print(myController.counter.value.counter);
+          print(myController.counterObj.value.counter);
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

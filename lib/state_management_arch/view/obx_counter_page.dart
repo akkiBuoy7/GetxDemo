@@ -29,7 +29,7 @@ class _MyObxCounterState extends State<MyObxCounter> {
             Obx(
               // widget to listen to observable variable
               () => Text(
-                '${myController.counter.value?.counter}',
+                '${myController.counterObj.value.counter}',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
@@ -39,7 +39,7 @@ class _MyObxCounterState extends State<MyObxCounter> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           myController.incrementCounter();
-          print(myController.counter.value?.counter);
+          print(myController.counterObj.value.counter);
 
         },
         tooltip: 'Increment',
